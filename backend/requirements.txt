@@ -1,0 +1,10 @@
+flask
+flask-cors
+numpy
+pandas
+scipy
+yfinance
+plotly
+gunicorn
+python-dotenv
+requests

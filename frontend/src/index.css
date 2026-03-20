@@ -1,0 +1,70 @@
+:root {
+  --bg-base:       #04070f;
+  --bg-card:       rgba(10, 16, 32, 0.85);
+  --bg-card-hover: rgba(14, 22, 44, 0.9);
+  --border:        #1a2540;
+  --border-bright: #243352;
+  --blue:          #3b82f6;
+  --blue-lt:       #60a5fa;
+  --purple:        #8b5cf6;
+  --green:         #10b981;
+  --green-lt:      #34d399;
+  --yellow:        #f59e0b;
+  --yellow-lt:     #fbbf24;
+  --red:           #ef4444;
+  --red-lt:        #f87171;
+  --text-primary:  #e2e8f0;
+  --text-secondary:#94a3b8;
+  --text-muted:    #475569;
+  --text-dim:      #334155;
+  --font-display:  'Syne', sans-serif;
+  --font-mono:     'DM Mono', monospace;
+  --radius-sm:     6px;
+  --radius-md:     10px;
+  --radius-lg:     16px;
+  --shadow-card:   0 1px 3px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.03);
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(12px);
+}
+.card-title {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 20px; font-size: 10px; font-weight: 500; letter-spacing: 0.05em; }
+.badge-green  { background: rgba(16,185,129,0.12); color: var(--green-lt);  border: 1px solid rgba(16,185,129,0.25); }
+.badge-blue   { background: rgba(59,130,246,0.12);  color: var(--blue-lt);   border: 1px solid rgba(59,130,246,0.25); }
+.badge-yellow { background: rgba(245,158,11,0.12);  color: var(--yellow-lt); border: 1px solid rgba(245,158,11,0.25); }
+.badge-red    { background: rgba(239,68,68,0.12);   color: var(--red-lt);    border: 1px solid rgba(239,68,68,0.25); }
+.btn { display: inline-flex; align-items: center; gap: 7px; padding: 9px 18px; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 12px; font-weight: 500; cursor: pointer; border: none; transition: all 0.18s ease; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-primary { background: linear-gradient(135deg, var(--blue), var(--purple)); color: #fff; box-shadow: 0 2px 12px rgba(59,130,246,0.3); }
+.btn-primary:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(59,130,246,0.45); }
+.btn-ghost { background: transparent; color: var(--text-secondary); border: 1px solid var(--border-bright); }
+.btn-ghost:hover:not(:disabled) { background: var(--bg-card-hover); color: var(--text-primary); border-color: var(--blue); }
+.btn-active { background: rgba(59,130,246,0.15); color: var(--blue-lt); border: 1px solid rgba(59,130,246,0.35); }
+.ticker-chip { padding: 5px 12px; border-radius: 6px; font-size: 11px; font-weight: 500; cursor: pointer; transition: all 0.15s; background: transparent; border: 1px solid var(--border-bright); color: var(--text-muted); font-family: var(--font-mono); }
+.ticker-chip.active { border-color: currentColor; }
+.ticker-chip:hover { filter: brightness(1.15); }
+.tab-bar { display: flex; gap: 2px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+.tab { padding: 9px 16px; font-size: 11px; font-weight: 500; cursor: pointer; background: transparent; border: none; color: var(--text-muted); border-bottom: 2px solid transparent; margin-bottom: -1px; font-family: var(--font-mono); transition: all 0.15s; letter-spacing: 0.04em; }
+.tab:hover { color: var(--text-secondary); }
+.tab.active { color: var(--blue-lt); border-bottom-color: var(--blue); }
+.alloc-bar { display: flex; height: 18px; border-radius: 4px; overflow: hidden; width: 100%; gap: 1px; }
+.alloc-segment { display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 600; color: #000; transition: width 0.4s ease; overflow: hidden; }
+input[type="range"] { -webkit-appearance: none; height: 4px; border-radius: 2px; background: var(--border-bright); outline: none; flex: 1; }
+input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; border-radius: 50%; background: var(--blue-lt); cursor: pointer; border: 2px solid var(--bg-base); }
+.fade-up { animation: fadeUp 0.35s ease both; }
+.spin { animation: spin 1s linear infinite; display: inline-block; }
+.pulse { animation: pulse 1.5s ease infinite; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
